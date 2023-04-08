@@ -95,4 +95,8 @@ function input_manager:axis_sequence_poller() end
 ---@return input_sequence_poller
 function input_manager:axis_sequence_poller() end
 
+---Returns an input sequence poller for assigning host inputs to a switch input.
+---@return input_sequence_poller
+function input_manager:switch_sequence_poller() end
+
 return input_manager

@@ -1183,3 +1183,11 @@ function emu.add_machine_post_load_notifier(callback) end
 ---Spin up a new thread to run Lua code in
 ---@return mame_thread
 function emu.thread() end
+
+---Return the current running tick counter
+---@return number
+function emu.osd_ticks() end
+
+---Return the frequency of OSD ticks per second
+---@return number
+function emu.osd_ticks_per_second() end

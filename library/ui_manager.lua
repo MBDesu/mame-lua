@@ -32,7 +32,7 @@ function ui_manager:set_aggressive_input_focus(enable) end
 ---specified input type and player suitable for using in prompts. The input type
 ---is an enumerated value. The player number is a zero-based index. If the
 ---player number is not supplied, it is assumed to be zero.
----@param type number
+---@param type input_type_entry|number
 ---@param player? number
 ---@return input_seq
 function ui_manager:get_general_input_setting(type, player) end

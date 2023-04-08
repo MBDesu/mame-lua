@@ -24,14 +24,14 @@ function ui_input_manager:find_mouse() end
 
 ---Returns a Boolean indicating whether the specified UI input has been pressed.
 ---The input type is an enumerated value.
----@param type number
+---@param type input_type_entry|number
 ---@return boolean
 function ui_input_manager:pressed(type) end
 
 ---Returns a Boolean indicating whether the specified UI input has been pressed
 ---or auto-repeat has been triggered at the specified speed. The input type is
 ---an enumerated value; the speed is an interval in sixtieths of a second.
----@param type number
+---@param type input_type_entry|number
 ---@param speed number
 ---@return boolean
 function ui_input_manager:pressed_repeat(type, speed) end

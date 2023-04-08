@@ -24,7 +24,7 @@ function ioport_manager:type_pressed(type, player) end
 ---Returns the display name for the specified input type and player number. The
 ---input type is an enumerated value. The player number is a zero-based index.
 ---If the player number is not supplied, it is assumed to be zero.
----@param type number
+---@param type input_type_entry|number
 ---@param player? number
 ---@return string
 function ioport_manager:type_name(type, player) end
@@ -36,7 +36,7 @@ function ioport_manager:type_name(type, player) end
 ---
 ---This should be called with values obtained from I/O port fields to provide
 ---canonical grouping in an input configuration UI.
----@param type number
+---@param type input_type_entry|number
 ---@param player any
 ---@return number
 function ioport_manager:type_group(type, player) end

@@ -11,7 +11,7 @@ local input_sequence_poller = {}
 ---for analog inputs, the user can cycle between the full range, and the
 ---positive and negative portions of an axis; for switch inputs, an “or” code is
 ---appended and the user can add an alternate host input combination.
----@param seq input_seq
+---@param seq? input_seq
 function input_sequence_poller:start(seq) end
 
 ---Polls for for user input and updates the sequence if appropriate. Returns a

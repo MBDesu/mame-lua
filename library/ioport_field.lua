@@ -5,7 +5,7 @@
 ---@field device device               (read-only) The device that owns the port that the field belongs to.
 ---@field port ioport_port            (read-only) The I/O port that the field belongs to.
 ---@field live ioport_field_live      (read-only) The live state of the field.
----@field type number                 (read-only) The input type of the field. This is an enumerated value.
+---@field type input_type_entry       (read-only) The input type of the field. This is an enumerated value.
 ---@field name number                 (read-only) The display name for the field.
 ---@field default_name number         (read-only) The name for the field from the emulated system's configuration (cannot be overridden by scripts or plugins).
 ---@field player number               (read-only) Zero-based player number for the field.
