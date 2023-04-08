@@ -1,0 +1,32 @@
+---@meta _
+
+---Device enumerators are special containers that allow iterating over devices
+---and looking up devices by tag. A device enumerator can be created to find any
+---kind of device, to find devices of a particular type, or to find devices that
+---implement a particular interface. When iterating using `pairs` or `ipairs`,
+---devices are returned by walking the device tree depth-first in creation
+---order.
+---
+---The index get operator looks up a device by tag. It returns `nil` if no
+---device with the specified tag is found, or if the device with the specified
+---tag does not meet the type/interface requirements of the device enumerator.
+---The complexity is O(1) if the result is cached, but an uncached device lookup
+---is expensive. The `at` method has O(n) complexity.
+---
+---If you create a device enumerator with a starting point other than the root
+---machine device, passing an absolute tag or a tag containing parent references
+---to the index operator may return a device that would not be discovered by
+---iteration. If you create a device enumerator with restricted depth, devices
+---that would not be found due to being too deep in the hierarchy can still be
+---looked up by tag.
+---
+---Creating a device enumerator with depth restricted to zero can be used to
+---downcast a device or test whether a device implements a certain interface.
+---For example this will test whether a device implements the media image
+---interface:
+---
+---```image_intf = emu.image_enumerator(device, 0):at(1) -if image_intf then
+---  print(string.format("Device %s mounts images", device.tag)) -end```
+---@class device_enumerator<T>
+local device_enumerator = {}
+return device_enumerator

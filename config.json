@@ -1,0 +1,5 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/LLS-Addons/main/schemas/addon_config.schema.json",
+  "name": "MAME Lua",
+  "words": ["register_frame", "register_frame_done", "register_start"]
+}
