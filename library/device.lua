@@ -10,7 +10,7 @@
 ---@field configured boolean                          (read-only) A boolean indicating whether the device has completed configuration.
 ---@field started boolean                             (read-only) A boolean indicating whether the device has completed starting.
 ---@field debug device_debug                          (read-only) The [debugger interface](device_debug.lua) to the device if it is a CPU device, or nil if it is not a CPU device or the debugger is not enabled.
----@field state table<symbol, device_state_entry|nil> (read-only) The [state entries](device_state_entry.lua) for devices that expose the register state interface, indexed by symbol, or nil for other devices. The index operator and index_of methods have O(n) complexity; all other supported operations have O(1) complexity.
+---@field state table<symbol_entry, device_state_entry|nil> (read-only) The [state entries](device_state_entry.lua) for devices that expose the register state interface, indexed by symbol, or nil for other devices. The index operator and index_of methods have O(n) complexity; all other supported operations have O(1) complexity.
 ---@field spaces table<string, address_space>         (read-only) A table of the device's [address spaces](address_space.lua), indexed by name. Only valid for devices that implement the memory interface. Note that the names are specific to the device type and have no special significance.
 local device = {}
 
