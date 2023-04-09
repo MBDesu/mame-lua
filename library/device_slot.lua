@@ -2,10 +2,10 @@
 
 ---Wraps MAME's `device_slot_interface` class which is a mix-in implemented by devices that instantiate a user-specified child device.
 ---@class device_slot
----@field fixed boolean                          (read-only) A Boolean indicating whether this is a slot with a card specified in machine configuration that cannot be changed by the user.
----@field has_selectable_options boolean         (read-only) A Boolean indicating whether the slot has any user-selectable options (as opposed to options that can only be selected programmatically, typically for fixed slots or to load media images).
----@field options device_enumerator<slot_option> (read-only) The slot options describing the child devices that can be instantiated by the slot, indexed by option value. The `at` and `index_of` methods have O(n) complexity; all other supported operations have O(1) complexity.
----@field device device                          (read-only) The underlying [device](device.lua).
+---@field fixed boolean                  (read-only) A Boolean indicating whether this is a slot with a card specified in machine configuration that cannot be changed by the user.
+---@field has_selectable_options boolean (read-only) A Boolean indicating whether the slot has any user-selectable options (as opposed to options that can only be selected programmatically, typically for fixed slots or to load media images).
+---@field options table<slot_option>     (read-only) The slot options describing the child devices that can be instantiated by the slot, indexed by option value. The `at` and `index_of` methods have O(n) complexity; all other supported operations have O(1) complexity.
+---@field device device                  (read-only) The underlying [device](device.lua).
 local device_slot = {}
 
 ---Wraps MAME's `device_slot_interface::slot_option` class, which represents a
