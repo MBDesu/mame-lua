@@ -24,13 +24,14 @@ function device_debug:go() end
 ---@param addr number
 ---@param cond? string
 ---@param act? string
+---@return number
 function device_debug:bpset(addr, cond, act) end
 
 ---Enable the specified breakpoint, or all breakpoints for the device if no
 ---breakpoint number is specified. Returns whether the specified number matched
 ---a breakpoint if a breakpoint number is specified, or nil if no breakpoint
 ---number is specified.
----@param bp? debug_breakpoint
+---@param bp? number The index of the breakpoint
 ---@return boolean|nil
 function device_debug:bpenable(bp) end
 
@@ -38,7 +39,7 @@ function device_debug:bpenable(bp) end
 ---breakpoint number is specified. Returns whether the specified number matched
 ---a breakpoint if a breakpoint number is specified, or nil if no breakpoint
 ---number is specified.
----@param bp? debug_breakpoint
+---@param bp? number The index of the breakpoint
 ---@return boolean|nil
 function device_debug:bpdisable(bp) end
 
@@ -46,7 +47,7 @@ function device_debug:bpdisable(bp) end
 ---breakpoint number is specified. Returns whether the specified number matched
 ---a breakpoint if a breakpoint number is specified, or nil if no breakpoint
 ---number is specified.
----@param bp? debug_breakpoint
+---@param bp? number The index of the breakpoint
 ---@return boolean|nil
 function device_debug:bpclear(bp) end
 
@@ -79,7 +80,7 @@ function device_debug:wpset(space, type, addr, len, cond, act) end
 ---watchpoint number is specified. Returns whether the specified number matched
 ---a watchpoint if a watchpoint number is specified, or nil if no watchpoint
 ---number is specified.
----@param wp? debug_watchpoint
+---@param wp? number
 ---@return boolean|nil
 function device_debug:wpenable(wp) end
 
@@ -87,7 +88,7 @@ function device_debug:wpenable(wp) end
 ---watchpoint number is specified. Returns whether the specified number matched
 ---a watchpoint if a watchpoint number is specified, or nil if no watchpoint
 ---number is specified.
----@param wp? debug_watchpoint
+---@param wp? number
 ---@return boolean|nil
 function device_debug:wpdisable(wp) end
 
@@ -95,7 +96,7 @@ function device_debug:wpdisable(wp) end
 ---watchpoint number is specified. Returns whether the specified number matched
 ---a watchpoint if a watchpoint number is specified, or nil if no watchpoint
 ---number is specified.
----@param wp? debug_watchpoint
+---@param wp? number
 ---@return boolean|nil
 function device_debug:wpclear(wp) end
 
