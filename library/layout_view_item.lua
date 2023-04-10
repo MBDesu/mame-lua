@@ -5,21 +5,21 @@
 ---an emulated screen or a layout element. Note that layout view item callbacks
 ---are not run as coroutines.
 ---@class layout_view_item
----@field id number (read-only) Get the optional item identifier. This is the value of the id attribute in the XML layout file if present, or nil.
----@field bounds_animated boolean (read-only) A Boolean indicating whether the item''s bounds depend on its animation state.
----@field color_animated boolean (read-only) A Boolean indicating whether the item's colour depends on its animation state.
----@field bounds render_bounds (read-only) The item's bounds for the current state. This is a render bounds object in render target coordinates.
----@field color render_color (read-only) The item's colour for the current state. The colour of the screen or element texture is multiplied by this colour. This is a render colour object.
----@field scroll_wrap_x boolean (read-only) A Boolean indicating whether the item wraps horizontally.
----@field scroll_wrap_y boolean (read-only) A Boolean indicating whether the item wraps vertically.
----@field scroll_size_x number (read/write) Get the item's horizontal scroll window size for the current state, or set the horizontal scroll window size to use in the absence of bindings. This is a floating-point value representing a proportion of the associated element's width.
----@field scroll_size_y number (read/write) Get the item's vertical scroll window size for the current state, or set the vertical scroll window size to use in the absence of bindings. This is a floating-point value representing a proportion of the associated element's height.
----@field scroll_pos_x number (read/write) Get the item's horizontal scroll position for the current state, or set the horizontal scroll position size to use in the absence of bindings. This is a floating-point value.
----@field scroll_pos_y number (read/write) Get the item's vertical scroll position for the current state, or set the vertical position size to use in the absence of bindings. This is a floating-point value.
----@field blend_mode -1|0|1|2|3 (read-only) Get the item's blend mode. This is an integer value, where 0 means no blending, 1 means alpha blending, 2 means RGB multiplication, 3 means additive blending, and -1 allows the items within a container to specify their own blending modes.
----@field orientation number (read-only) Get the item orientation flags. This is an integer bit mask, where bit 0 (0x01) is set to mirror horizontally, bit 1 (0x02) is set to mirror vertically, and bit 2 (0x04) is set to mirror along the top left-bottom right diagonal.
----@field element_state unknown (read-only) Get the current element state. This will call the element state callback function to handle bindings.
----@field animation_state unknown (read-only) Get the current animation state. This will call the animation state callback function to handle bindings.
+---@field id string               (read-only) Get the optional item identifier. This is the value of the id attribute in the XML layout file if present, or nil.
+---@field bounds_animated boolean (read-only) A Boolean indicating whether the item's bounds depend on its animation state.
+---@field color_animated boolean  (read-only) A Boolean indicating whether the item's colour depends on its animation state.
+---@field bounds render_bounds    (read-only) The item's bounds for the current state. This is a [render bounds](render_bounds.lua) object in render target coordinates.
+---@field color render_color      (read-only) The item's colour for the current state. The colour of the screen or element texture is multiplied by this colour. This is a [render colour](render_color.lua) object.
+---@field scroll_wrap_x boolean   (read-only) A Boolean indicating whether the item wraps horizontally.
+---@field scroll_wrap_y boolean   (read-only) A Boolean indicating whether the item wraps vertically.
+---@field scroll_size_x number    (read/write) Get the item's horizontal scroll window size for the current state, or set the horizontal scroll window size to use in the absence of bindings. This is a floating-point value representing a proportion of the associated element's width.
+---@field scroll_size_y number    (read/write) Get the item's vertical scroll window size for the current state, or set the vertical scroll window size to use in the absence of bindings. This is a floating-point value representing a proportion of the associated element's height.
+---@field scroll_pos_x number     (read/write) Get the item's horizontal scroll position for the current state, or set the horizontal scroll position size to use in the absence of bindings. This is a floating-point value.
+---@field scroll_pos_y number     (read/write) Get the item's vertical scroll position for the current state, or set the vertical position size to use in the absence of bindings. This is a floating-point value.
+---@field blend_mode -1|0|1|2|3   (read-only) Get the item's blend mode. This is an integer value, where 0 means no blending, 1 means alpha blending, 2 means RGB multiplication, 3 means additive blending, and -1 allows the items within a container to specify their own blending modes.
+---@field orientation number      (read-only) Get the item orientation flags. This is an integer bit mask, where bit 0 (0x01) is set to mirror horizontally, bit 1 (0x02) is set to mirror vertically, and bit 2 (0x04) is set to mirror along the top left-bottom right diagonal.
+---@field element_state string    (read-only) Get the current element state. This will call the element state callback function to handle bindings.
+---@field animation_state string  (read-only) Get the current animation state. This will call the animation state callback function to handle bindings.
 local layout_view_item = {}
 
 ---Set a function to call to obtain the multiplier colour for the item. The

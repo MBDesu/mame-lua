@@ -7,12 +7,12 @@
 ---are not run as coroutines.
 ---@class layout_view
 ---@field items table<layout_view_item> (read-only) The screen and layout element items in the view. This container does not support iteration by key using pairs; only iteration by index using ipairs is supported. The key is the value of the id attribute if present. Only items with id attributes can be looked up by key. The index get method has O(1) complexity, and the at and index_of methods have O(n) complexity.
----@field name string (read-only) The display name for the view. This may be qualified to indicate the device that caused the layout file to be loaded when it isn't the root machine device.
----@field unqualified_name string (read-only) The unqualified name of the view, exactly as it appears in the name attribute in the XML layout file.
----@field visible_screen_count number (read-only) The number of screens items currently enabled in the view.
----@field effective_aspect number (read-only) The effective width-to-height aspect ratio of the view in its current configuration.
----@field bounds render_bounds (read-only) A render bounds object representing the effective bounds of the view in its current configuration. The coordinates are in view units, which are arbitrary but assumed to have square aspect ratio.
----@field has_art boolean A Boolean indicating whether the view has any non-screen items, including items that are not visible because the user has hidden the item collection that they belong to.
+---@field name string                   (read-only) The display name for the view. This may be qualified to indicate the device that caused the layout file to be loaded when it isn't the root machine device.
+---@field unqualified_name string       (read-only) The unqualified name of the view, exactly as it appears in the name attribute in the XML layout file.
+---@field visible_screen_count number   (read-only) The number of screens items currently enabled in the view.
+---@field effective_aspect number       (read-only) The effective width-to-height aspect ratio of the view in its current configuration.
+---@field bounds render_bounds          (read-only) A render bounds object representing the effective bounds of the view in its current configuration. The coordinates are in view units, which are arbitrary but assumed to have square aspect ratio.
+---@field has_art boolean               A Boolean indicating whether the view has any non-screen items, including items that are not visible because the user has hidden the item collection that they belong to.
 local layout_view = {}
 
 ---Returns a Boolean indicating whether the screen is present in the view. This
