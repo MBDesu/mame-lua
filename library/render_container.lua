@@ -60,7 +60,6 @@ function render_container:draw_box(left, top, right, bottom, line, fill) end
 ---integer, in the order alpha, red, green, blue from most-significant to
 ---least-significant byte. If the line colour is not provided, the UI text
 ---colour is used.
----comment
 ---@param x0 number
 ---@param y0 number
 ---@param x1 number
@@ -118,7 +117,7 @@ function render_container:draw_quad(texture, x0, y0, x1, y1, color) end
 ---provided, it is fully transparent.
 ---@param x_or_justify number|'left'|'center'|'right'
 ---@param y number
----@param text number
+---@param text string
 ---@param foreground? number
 ---@param background? number
 function render_container:draw_text(x_or_justify, y, text, foreground, background) end
