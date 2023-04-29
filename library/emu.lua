@@ -1032,6 +1032,12 @@ function emu.bitmap_argb32(source) end
 ---@return bitmap
 function emu.bitmap_argb32(source, x0, y0, x1, y1) end
 
+---Creates an ARGB format bitmap from data in PNG, JPEG (JFIF/EXIF) or Microsoft
+---DIB (BMP) format. Raises an error if the data invalid or not a supported
+---format.
+---@param data any
+function emu.bitmap_argb32.load(data) end
+
 ---Creates a new symbol table in the context of the specified machine.
 ---@param machine any
 ---@return symbol_table

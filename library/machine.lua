@@ -4,6 +4,7 @@
 ---It provides access to the other core objects that implement an emulation
 ---session as well as the emulated device tree.
 ---@class running_machine
+---@field ui_active boolean
 ---@field time attotime                                  (read-only) The elapsed emulated time for the current session as an [`attotime`](attotime.lua).
 ---@field system driver_metadata                         (read-only) The [driver metadata](driver_metadata.lua) for the current system.
 ---@field parameters parameters_manager                  (read-only) The [parameters manager](parameters_manager.lua) for the current emulation session.
