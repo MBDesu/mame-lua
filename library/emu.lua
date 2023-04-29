@@ -1077,6 +1077,7 @@ function emu.parsed_expression(symbols) end
 ---@param symbols symbol_table
 ---@param string string
 ---@param default_base? number
+---@return parsed_expression
 function emu.parsed_expression(symbols, string, default_base) end
 
 ---Start given driver_name
