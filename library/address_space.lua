@@ -356,13 +356,9 @@ function address_space:read_range(start_addr, end_addr, width, step) end
 ---changed, or rw if both read and write handlers have potentially changed.
 ---
 ---Returns a notifier subscription.
----comment
----@param start_addr number
----@param end_addr number
----@param name string
 ---@param callback fun(changed: 'r'|'w'|'rw')
 ---@return notifier_subscription
-function address_space:install_read_tap(start_addr, end_addr, name, callback) end
+function address_space:add_change_notifier(callback) end
 
 ---Installs a pass-through handler that will receive notifications on reads from
 ---the specified range of addresses in the address space. The start and end
@@ -374,8 +370,12 @@ function address_space:install_read_tap(start_addr, end_addr, name, callback) en
 ---address space. To modify the data being read, return the modified value from
 ---the callback function as an integer. If the callback does not return an
 ---integer, the data will not be modified.
+---@param start_addr number
+---@param end_addr number
+---@param name string
 ---@param callback fun(offset: number, data: number, mask: number): number|any
-function address_space:add_change_notifier(callback) end
+---@return passthrough_handler
+function address_space:install_read_tap(start_addr, end_addr, name, callback) end
 
 ---Installs a pass-through handler that will receive notifications on write to
 ---the specified range of addresses in the address space. The start and end
@@ -391,6 +391,7 @@ function address_space:add_change_notifier(callback) end
 ---@param end_addr number
 ---@param name string
 ---@param callback fun(offset: number, data: number, mask: number): number|any
+---@return passthrough_handler
 function address_space:install_write_tap(start_addr, end_addr, name, callback) end
 
 return address_space
